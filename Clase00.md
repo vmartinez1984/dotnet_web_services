@@ -80,3 +80,69 @@ public async Task<int> AgregarAsync(Entidad entidad)
 - Coloque comentarios en sus metodos, clases.
 
 - Coloque un archivo readme, describiendo lo que hace su proyecto. Tambien es recomendable que anote las librerias con las versiones, algunos pasos para instalar, configurar etc.
+
+- Si su método es muy largo dividalo explique con comentario
+
+```
+public class ClienteRdn
+{
+    public async Task<IdDto> AgregarAsync(ClienteDto cliente)
+    {
+        string curp
+        bool existeCurp
+        ...
+
+        //Obtner el Curp con Renapo
+        curp = await _renapoServicio.ObtenerCurp(cliente)
+        
+        //Verificar la existencia del Curp en la Db
+        existeCurp = await _repositorio.Cliente.ExisteCurp(curp)
+        
+        ...
+
+        return idDto
+    }
+}
+```
+
+- Siempre que sea posible divida su método o función en
+    - Declaración de varibles y/o constantes
+    - Proceso de datos
+    - Retorno de respuesta o final de proceso
+
+- Evite el uso de declaración var, pero si las usa delcarales y uselas en la misma o siguiente linea
+```
+var curp = awai _renapoServicio.ObtenerCurp(cliente)
+var existeCurp = await _repositorio.Cliente.ExisteCurp(curp)
+```
+
+- Use el intelisense en la declaración de variables, use en lo minimo abreviaciones, trate de usar los nombre completos.
+
+    - Ejemplos recomendados
+```
+ProductoDto productoDto
+UsuarioEntidad usuarioEntidad
+```
+    - Ejemplos no recomendados
+```
+ProductoDto p;
+UsuarioEntidad usu;
+```
+
+- Use nombres decriptivos
+```
+public class ClienteDto
+{
+    public string Nombre { get; set; }
+
+    public string PrimerApellido { get; set; }
+
+    public string SegundoApellido { get; set; }
+
+    public int EstadoIdDeNacimiento { get; set; }
+
+    public DateTime FechaDeNacimiento { get; set; }
+
+    public DateTime FechaDeRegistro { get; set; }
+}
+```
