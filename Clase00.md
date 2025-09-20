@@ -2,6 +2,8 @@
 
 En algunos casos su proyecto esta avanzado y no será viable hacer refactorizaciones por el tiempo. Pero al menos en los ejercicios de la clase deberan de contener al menos 3 clases con las convenciones que siguen o mínimo siempre respetar las suyas que este usando en su proyecto.
 
+Si usted usa estas recomendaciones, le aseguro que la codificación será sencilla, limpia, fácil de leer y comprender. Son las recomendaciones del Tio Bob en Clean Code y las convenciones para C# de Microsoft.
+
 - Uso de UpperCamelCase
 
 - Una clase y/o metodo una responsabilidad
@@ -129,7 +131,7 @@ ProductoDto p;
 UsuarioEntidad usu;
 ```
 
-- Use nombres decriptivos
+- Use nombres decriptivos, con articulos, conectores. Antes se abreviaba y se usaban las primeras letras por que el nombre de las variables tenian un rango máximo. Los lenguajes han evolucionado, las apps se han crecido. Ya no tenemos esta limitaciones, solo en casos especiales y son contados.
 ```
 public class ClienteDto
 {
@@ -146,3 +148,4 @@ public class ClienteDto
     public DateTime FechaDeRegistro { get; set; }
 }
 ```
+- Si acostumbra a codear en ingles, español o espanglish, es libre de hacerlo, lo unico que le pido es que tengo uniformida todo en ingles, español o espanglish, pero no rompa las convenciones que usted eligio.
